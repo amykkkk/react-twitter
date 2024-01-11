@@ -6,6 +6,8 @@ import Login from "./routes/login";
 import CreateAccount from "./routes/crate-account";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { useEffect, useState } from "react";
+import LodaingScreen from "./components/lodaing-screen";
 
 const router = createBrowserRouter([
   {
@@ -45,10 +47,19 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
+  const [isLoaing, setIsLodaing] = useState(true);
+  const init = async () => {
+    setIsLodaing(false);
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
+
   return (
     <>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      {isLoaing ? <LodaingScreen /> : <RouterProvider router={router} />}
     </>
   );
 }
