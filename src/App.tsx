@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import LodaingScreen from "./components/lodaing-screen";
 import { auth } from "./firebase";
 import ProtectedRoute from "./components/protected-route";
+import ResetPassWord from "./components/ResetPassWord";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/create-account",
     element: <CreateAccount />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassWord />,
   },
 ]);
 
