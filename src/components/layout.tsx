@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 export default function Layout() {
   const navigate = useNavigate();
   const onLogOut = async () => {
-    const ok = confirm("Are you sure want to log out?");
+    const ok = confirm("Are you sure you want to log out?");
     if (ok) {
       await auth.signOut();
       navigate("/login");
@@ -74,7 +74,7 @@ const Wrapper = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 4fr;
-  height: 100px;
+  height: 100%;
   padding: 50px 0px;
   width: 100%;
   max-width: 860px;
