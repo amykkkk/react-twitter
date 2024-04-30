@@ -76,7 +76,7 @@ export default function Login() {
       {error !== "" ? <Error>{error}</Error> : null}
 
       <Switcher>
-        Don't have an accout?
+        Don't have an accout?&nbsp;
         <Link to="/create-account">Create one &rarr;</Link>
       </Switcher>
       <Switcher>
