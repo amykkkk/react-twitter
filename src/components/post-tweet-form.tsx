@@ -41,10 +41,7 @@ export default function PostTweetForm() {
 
       if (file) {
         //Reference 생성 (ref)
-        const locationRef = ref(
-          storage,
-          `tweets/${user.uid}-${user.displayName}/${doc.id}`
-        );
+        const locationRef = ref(storage, `tweets/${user.uid}/${doc.id}`);
 
         //Cloud Storage에 업로드
         const result = await uploadBytes(locationRef, file);
