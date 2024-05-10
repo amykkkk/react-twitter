@@ -78,6 +78,7 @@ export default function Timeline() {
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 30px;
   flex-direction: column;
+  overflow-y: scroll;
 `;
