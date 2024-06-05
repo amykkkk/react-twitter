@@ -12,7 +12,6 @@ import { useState } from "react";
 
 export default function Tweet({ username, photo, tweet, userId, id }: ITweet) {
   const [isEdit, setIsEdit] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [edit, setEdit] = useState(tweet);
   const [fileEdit, setFileEdit] = useState<File | null>(null);
   const user = auth.currentUser;
@@ -66,7 +65,6 @@ export default function Tweet({ username, photo, tweet, userId, id }: ITweet) {
 
   const onSubmit = async () => {
     try {
-      setIsLoading(true);
       const document = doc(db, "tweets", id);
 
       await updateDoc(document, {
@@ -91,8 +89,6 @@ export default function Tweet({ username, photo, tweet, userId, id }: ITweet) {
       setIsEdit(false);
     } catch (e) {
       console.log(e);
-    } finally {
-      setIsLoading(false);
     }
   };
 
